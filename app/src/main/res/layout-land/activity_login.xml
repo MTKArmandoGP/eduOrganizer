@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.487">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -52,10 +52,10 @@
             android:hint="Email" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/txtContraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextTextPersonName2"
+            android:layout_below="@+id/txtEmail"
             android:layout_marginTop="26dp"
             android:hint="Contraseña"
             android:inputType="textPassword" />
@@ -63,31 +63,32 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextTextPersonName3"
+            android:layout_below="@+id/txtContraseña"
             android:layout_marginTop="19dp"
             android:gravity="right"
             android:text="¿Olvidaste la Contraseña?" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnIniciar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="206dp"
             android:background="@drawable/boton_signin"
             android:elevation="30dp"
-            android:text="Sign In" />
+            android:text="Iniciar" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button"
+            android:layout_below="@+id/btnIniciar"
             android:layout_marginTop="17dp"
             android:background="@drawable/boton2"
             android:elevation="30dp"
 
-            android:text="Sign Up" />
+            android:onClick="irRegistro"
+            android:text="Registrarme" />
 
     </RelativeLayout>
 
