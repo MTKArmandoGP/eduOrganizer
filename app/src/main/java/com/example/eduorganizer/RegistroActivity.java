@@ -25,6 +25,17 @@ public class RegistroActivity extends AppCompatActivity {
     private Button btnResgistrar;
     FirebaseAuth mAuth;
     @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent=new Intent(getApplicationContext(),PantallaPrincipalActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
@@ -45,25 +56,19 @@ public class RegistroActivity extends AppCompatActivity {
                 email=txtCorreo.getText().toString();
                 if (validarCampos()) {
 
-                    mAuth.createUserWithEmailAndPassword(email, contraseña)
-                            .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-
-                                        Toast.makeText(RegistroActivity.this, "Cuenta Creada",
-                                                Toast.LENGTH_SHORT).show();
-
-
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-
-                                        Toast.makeText(RegistroActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }
-                            });
+                    mAuth.createUserWithEmailAndPassword(email,contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(RegistroActivity.this,"Usuario Creado",Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                Toast.makeText(RegistroActivity.this,"Usuario NO Creado",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
 
                 }
 
