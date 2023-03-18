@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "129085738070",
+    "project_id": "appmoviles-c4ed5",
+    "storage_bucket": "appmoviles-c4ed5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129085738070:android:d3a39c783688644b8cbff7",
+        "android_client_info": {
+          "package_name": "com.example.eduorganizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129085738070-h98a5o44tm8mqb63k1017cgv6l31c85n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eduorganizer",
+            "certificate_hash": "02956b1acecbbb10680e826187199c6be2617b38"
+          }
+        },
+        {
+          "client_id": "129085738070-ft2q3pj2nhp3lacl1ljahmfmfih6s32s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDSqYwsWK1wYjfXgMy3_fD5-0pMHn7uDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129085738070-ft2q3pj2nhp3lacl1ljahmfmfih6s32s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
