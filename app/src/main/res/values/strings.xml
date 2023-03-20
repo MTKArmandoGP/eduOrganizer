@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EduOrganizer</string>
+    <string name="buscar">Ingrese el titulo de la tarea</string>
+    <string name="agregar">Añadir</string>
+    <string name="tv1">Nombre de la tarea</string>
+    <string name="et1">Escriba el titulo de la tarea</string>
+    <string name="tv2">Fecha</string>
+    <string name="et2">DD/MM/AAAA</string>
+    <string name="tv3">Hora</string>
+    <string name="et3">HH:MM</string>
+    <string name="btnCon">Asignar</string>
 </resources>

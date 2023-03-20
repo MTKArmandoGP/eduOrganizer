@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_busqueda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/edit_text_busqueda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:hint="@string/buscar"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_buscar"
+                android:layout_width="64dp"
+                android:layout_height="45dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/buscar"
+                android:drawablePadding="8dp"
+                android:textColor="@android:color/transparent" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_busqueda"
+            android:fillViewport="true"
+            android:padding="16dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_agregar_nota"
+            android:layout_width="155dp"
+            android:layout_height="79dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/design_default_color_secondary_variant"
+            android:elevation="10dp"
+            android:text="@string/agregar"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:translationZ="3dp"
+            app:cornerRadius="100dp" />
+    </RelativeLayout>
+
+
