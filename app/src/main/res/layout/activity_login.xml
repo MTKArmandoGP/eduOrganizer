@@ -69,13 +69,14 @@
 
         <Button
             android:id="@+id/btnIniciar"
-            android:background="@drawable/boton_signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="206dp"
+            android:background="@drawable/btniniciar"
             android:elevation="30dp"
-            android:text="Iniciar" />
+            android:text="Iniciar"
+            android:textColor="#090909" />
 
         <Button
             android:id="@+id/btnRegistrar"
@@ -83,9 +84,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnIniciar"
             android:layout_marginTop="17dp"
-            android:background="@drawable/boton2"
+            android:background="@drawable/btnregistrarme"
             android:elevation="30dp"
-
             android:onClick="irRegistro"
             android:text="Registrarme" />
 

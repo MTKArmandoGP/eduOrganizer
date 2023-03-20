@@ -41,7 +41,7 @@
             android:layout_marginStart="11dp"
             android:layout_marginTop="53dp"
             android:layout_marginEnd="11dp"
-            android:hint="Nombre Completo" />
+            android:hint="Nombre de Usuario" />
 
         <EditText
             android:id="@+id/txt_Email"
@@ -83,14 +83,16 @@
 
         <Button
             android:id="@+id/btn_Registrarme"
-            android:layout_width="162dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_Contraseña2"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="99dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="57dp"
-            android:layout_marginEnd="103dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/btniniciar"
+            android:backgroundTint="#36DBA7"
             android:text="Registrarme"
             android:textColor="#FBFBFB" />
     </RelativeLayout>
