@@ -22,10 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     private Button iniciar;
     private FirebaseAuth mAuth;
 
+    //Cuando se inicie la pantalla verificamos si ya se ha autenticado el usuario
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent=new Intent(getApplicationContext(),PantallaPrincipalActivity.class);
@@ -44,17 +44,22 @@ public class LoginActivity extends AppCompatActivity {
         contraseña=findViewById(R.id.txtContraseña);
         iniciar=findViewById(R.id.btnIniciar);
 
+        //Agregamos un listener al boton de iniciar para poder validar las credenciales
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Guardamos lo obtenido de los campos en las variables String
                 String email,password;
                 email=correo.getText().toString();
                 password=contraseña.getText().toString();
+                //Verificamos que no haya campos vacios con el metodo "validarCampos"
                 if (validarCampos()) {
+                    //decimos que queremos ingresar con la autenticación de Correo y Contraseña y le mandamos las variables String
                     mAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    //Si la autentificación fue exitosa, nos manda el mensaje de confirmación y nos lleva a la pantalla principal
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         Toast.makeText(getApplicationContext(), "Campos Correctos", Toast.LENGTH_SHORT).show();
@@ -63,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(intent);
                                         finish();
                                     } else {
+                                        //Si los datos no coinciden con la base de datos, nos manda el mensaje de error
                                         Toast.makeText(LoginActivity.this, "Datos Incorrectos",
                                                 Toast.LENGTH_SHORT).show();
                                     }
@@ -73,9 +79,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //definimos el métdo de validarCampos
     private boolean validarCampos() {
         boolean camposLlenos = true;
-
+        //Verificamos que no haya campos vacios
         if (TextUtils.isEmpty(correo.getText().toString())) {
             Toast.makeText(getApplicationContext(), "Ingrese su email", Toast.LENGTH_SHORT).show();
             camposLlenos = false;
@@ -92,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent cambio= new Intent(LoginActivity.this,RegistroActivity.class);
         startActivity(cambio);
+        finish();
 
     }
 
