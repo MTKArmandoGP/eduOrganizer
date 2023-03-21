@@ -240,22 +240,33 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button"
+                    <TextView
+                        android:id="@+id/tvIrAgenda"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_height="39dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:text="Ir a Agenda" />
+                        android:background="@drawable/contenedor"
+                        android:gravity="center"
+                        android:text="IR A AGENDA"
+                        android:textColor="#919090"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/button2"
+                    <TextView
+                        android:id="@+id/tvIrTareas"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="39dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:text="Ir a Tareas" />
+                        android:background="@drawable/contenedor"
+
+                        android:gravity="center"
+                        android:text="IR A TAREAS"
+                        android:textColor="#919090"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
 
                 <Space
@@ -310,13 +321,19 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="4dp"
-                        android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/tvIrRecordatorios"
+                        android:layout_width="5dp"
+                        android:layout_height="39dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:text="Ir a Recordatorios" />
+                        android:background="@drawable/contenedor"
+
+                        android:gravity="center"
+                        android:text="IR A RECORDATORIOS"
+                        android:textColor="#919090"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <Space
                         android:layout_width="wrap_content"
