@@ -1,12 +1,17 @@
 package com.example.eduorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +25,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PantallaPrincipalActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
-    private Button btnSalir;
     private FirebaseUser user;
 
-    private TextView tvUser;
+    private TextView tvUser,saludoUser;
 
     private FirebaseFirestore mFirestore;
+
+    private DrawerLayout drawerLayout;
+    private ImageView menu;
+    private LinearLayout home,notas,tareas,agenda,logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +41,17 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_principal);
 
         auth=FirebaseAuth.getInstance();
-        btnSalir=findViewById(R.id.btnSalir);
         user=auth.getCurrentUser();
-        tvUser=findViewById(R.id.tvUsuario);
+        tvUser=findViewById(R.id.usuarioNav);
         mFirestore= FirebaseFirestore.getInstance();
+        drawerLayout=findViewById(R.id.drawerLayout);
+        menu=findViewById(R.id.menu);
+        home=findViewById(R.id.home);
+        notas=findViewById(R.id.Notas);
+        tareas=findViewById(R.id.Tareas);
+        agenda=findViewById(R.id.Agenda);
+        logout=findViewById(R.id.CerrarSesión);
+        saludoUser=findViewById(R.id.tvSaludo_PantallaPrincipal);
 
         //Se verifica si se ha iniciado sesión
         if(user==null){
@@ -57,7 +72,8 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
                         //Rescatamos el Nombre de Usario ingresado por el Usuario
                         String usuario= documentSnapshot.getString("usuario");
                         //Lo mandamos al textview con el mensaje de Bievenida
-                        tvUser.setText("Bienvenido "+usuario);
+                        tvUser.setText("Usuario: "+usuario);
+                        saludoUser.setText("Hola "+usuario);
                     }else{
                         //Si no existe, mandamos el mensaje de que no se encontró
                         Toast.makeText(PantallaPrincipalActivity.this, "No se Encontro Coincidencia", Toast.LENGTH_SHORT).show();
@@ -66,8 +82,26 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
             });
 
         }
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDrawer(drawerLayout);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+            }
+        });
+        notas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(PantallaPrincipalActivity.this,LoginActivity.class);
+            }
+        });
         //Agregamos un listener al botón para cerrar sesión y que nos mande al Login
-        btnSalir.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
@@ -76,5 +110,26 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout){
+        drawerLayout.openDrawer((GravityCompat.START));
+    }
+    public static void closeDrawer(DrawerLayout drawerLayout){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+    public static void redirectActivity(Activity activity,Class secondActivity){
+        Intent intent=new Intent(activity,secondActivity);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        closeDrawer(drawerLayout);
     }
 }
