@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv1" />
+    <EditText
+        android:id="@+id/edit_text_tarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/et1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv2" />
+    <EditText
+        android:id="@+id/edit_text_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/et2"
+        android:focusable="false"
+        android:inputType="date" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv3" />
+    <EditText
+        android:id="@+id/edit_text_hora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/et3"
+        android:focusable="false"
+        android:inputType="time" />
+
+    <Button
+        android:id="@+id/btn_confirmar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:backgroundTint="#C3F3E4"
+        android:text="@string/btnCon"
+        android:textColor="@color/black"
+        app:cornerRadius="100dp" />
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:backgroundTint="#C2F2E3"
+        android:text="Cancelar"
+        android:textColor="#090909"
+        app:cornerRadius="100dp" />
+</LinearLayout>

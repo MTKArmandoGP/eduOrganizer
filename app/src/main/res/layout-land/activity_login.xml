@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="206dp"
-            android:background="@drawable/boton_signin"
+            android:background="@drawable/btniniciar"
             android:elevation="30dp"
             android:text="Iniciar" />
 
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnIniciar"
             android:layout_marginTop="17dp"
-            android:background="@drawable/boton2"
+            android:background="@drawable/btnregistrarme"
             android:elevation="30dp"
 
             android:onClick="irRegistro"

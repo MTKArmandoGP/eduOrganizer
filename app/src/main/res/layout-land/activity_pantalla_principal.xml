@@ -113,8 +113,9 @@
 
                         <TextView
                             android:id="@+id/textView39"
-                            android:layout_width="219dp"
+                            android:layout_width="257dp"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_margin="5dp"
                             android:fontFamily="@font/architects_daughter"
                             android:text="Empieza con tu organización !!"

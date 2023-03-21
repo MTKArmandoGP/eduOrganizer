@@ -42,7 +42,7 @@
             android:layout_marginStart="11dp"
             android:layout_marginTop="53dp"
             android:layout_marginEnd="11dp"
-            android:hint="Nombre Completo" />
+            android:hint="Nombre de Usuario" />
 
         <EditText
             android:id="@+id/txt_Email"
@@ -84,19 +84,20 @@
 
         <Button
             android:id="@+id/btn_Registrarme"
-            android:layout_width="114dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/txt_Contraseña2"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="127dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="124dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/btniniciar"
             android:text="Registrarme" />
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

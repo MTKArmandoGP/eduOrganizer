@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">EduOrganizer</string>
+<<<<<<< HEAD
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
+=======
+    <string name="buscar">Ingrese el titulo de la tarea</string>
+    <string name="agregar">Añadir</string>
+    <string name="tv1">Nombre de la tarea</string>
+    <string name="et1">Escriba el titulo de la tarea</string>
+    <string name="tv2">Fecha</string>
+    <string name="et2">DD/MM/AAAA</string>
+    <string name="tv3">Hora</string>
+    <string name="et3">HH:MM</string>
+    <string name="btnCon">Asignar</string>
+>>>>>>> 78a7af1a00b6c9e04cd35148b4c50558e58c353c
 </resources>
