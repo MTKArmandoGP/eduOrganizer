@@ -41,6 +41,17 @@
         android:id="@+id/btn_confirmar"
         android:layout_width="match_parent"
         android:layout_height="66dp"
+        android:backgroundTint="#C3F3E4"
         android:text="@string/btnCon"
+        android:textColor="@color/black"
+        app:cornerRadius="100dp" />
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:backgroundTint="#C2F2E3"
+        android:text="Cancelar"
+        android:textColor="#090909"
         app:cornerRadius="100dp" />
 </LinearLayout>

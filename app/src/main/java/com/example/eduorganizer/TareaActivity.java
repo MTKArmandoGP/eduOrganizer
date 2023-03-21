@@ -21,6 +21,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +35,8 @@ public class TareaActivity extends AppCompatActivity {
     private Button btnAgregarNota;
     private List<CheckBox> listaCheckBox;
 
+    private FloatingActionButton home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +46,19 @@ public class TareaActivity extends AppCompatActivity {
         editTextBusqueda = findViewById(R.id.edit_text_busqueda);
         btnBuscar = findViewById(R.id.btn_buscar);
         btnAgregarNota = findViewById(R.id.btn_agregar_nota);
+        home = findViewById(R.id.fab_home);
 
         btnAgregarNota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TareaActivity.this, AgregarTareaActivity.class);
+                startActivity(intent);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TareaActivity.this, PantallaPrincipalActivity.class);
                 startActivity(intent);
             }
         });

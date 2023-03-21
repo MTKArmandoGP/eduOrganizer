@@ -1,6 +1,8 @@
 package com.example.eduorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -22,6 +24,9 @@ public class AgregarTareaActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
     private BaseDatos baseDatos;
+
+    private Button btnCancelar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +35,20 @@ public class AgregarTareaActivity extends AppCompatActivity {
         editTextFecha = findViewById(R.id.edit_text_fecha);
         editTextHora = findViewById(R.id.edit_text_hora);
         btnConfirmar = findViewById(R.id.btn_confirmar);
+        btnCancelar = findViewById(R.id.btn_cancelar);
 
         baseDatos = new BaseDatos(this);
 
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(AgregarTareaActivity.this, "Tarea no guardada", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AgregarTareaActivity.this, TareaActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
         editTextFecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +102,7 @@ public class AgregarTareaActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(AgregarTareaActivity.this, "Error al agregar la tarea", Toast.LENGTH_SHORT).show();
                     }
-                    Intent intent = new Intent(AgregarTareaActivity.this, MainActivity.class);
+                    Intent intent = new Intent(AgregarTareaActivity.this, TareaActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();

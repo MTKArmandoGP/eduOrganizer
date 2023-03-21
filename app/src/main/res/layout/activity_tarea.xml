@@ -59,23 +59,35 @@
 
         </ScrollView>
 
-        <Button
-            android:id="@+id/btn_agregar_nota"
-            android:layout_width="155dp"
-            android:layout_height="79dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
-            android:elevation="10dp"
-            android:text="@string/agregar"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:translationZ="3dp"
-            app:cornerRadius="100dp" />
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_agregar_nota"
+        android:layout_width="155dp"
+        android:layout_height="79dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#C3F3E4"
+        android:elevation="10dp"
+        android:text="@string/agregar"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="14sp"
+        android:translationZ="3dp"
+        app:cornerRadius="100dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/baseline_home_24"
+        app:backgroundTint="#C3F3E4" />
+</RelativeLayout>
 
 
