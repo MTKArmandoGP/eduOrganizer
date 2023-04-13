@@ -94,10 +94,17 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
                 recreate();
             }
         });
-        notas.setOnClickListener(new View.OnClickListener() {
+        tareas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(PantallaPrincipalActivity.this,LoginActivity.class);
+                redirectActivity(PantallaPrincipalActivity.this,TareaActivity.class);
+            }
+        });
+        agenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(PantallaPrincipalActivity.this,MainAgendaActivity.class);
+                startActivity(intent);
             }
         });
         //Agregamos un listener al botón para cerrar sesión y que nos mande al Login
@@ -131,5 +138,10 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         closeDrawer(drawerLayout);
+    }
+    public void irTareas(View view){
+        Intent cambio= new Intent(PantallaPrincipalActivity.this,TareaActivity.class);
+        startActivity(cambio);
+        finish();
     }
 }

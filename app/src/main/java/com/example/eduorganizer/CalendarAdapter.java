@@ -37,6 +37,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
         return new CalendarViewHolder( view, onItemListener, days);
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {

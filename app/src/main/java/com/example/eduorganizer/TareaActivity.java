@@ -60,6 +60,7 @@ public class TareaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TareaActivity.this, PantallaPrincipalActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

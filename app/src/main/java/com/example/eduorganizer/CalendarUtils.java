@@ -86,6 +86,7 @@ public class CalendarUtils {
 
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     private static LocalDate sundayForDate(LocalDate current) {
 

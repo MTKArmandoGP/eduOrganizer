@@ -133,6 +133,7 @@
                             android:gravity="center"
                             android:background="@drawable/contenedor"
                             android:text="AGENDA"
+                            android:elevation="30dp"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -145,9 +146,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
+                            android:background="@drawable/contenedor"
+                            android:elevation="30dp"
                             android:fontFamily="@font/architects_daughter"
                             android:gravity="center"
-                            android:background="@drawable/contenedor"
+                            android:onClick="irTareas"
                             android:text="TAREAS"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -163,6 +166,7 @@
                             android:layout_margin="5dp"
                             android:fontFamily="@font/architects_daughter"
                             android:gravity="center"
+                            android:elevation="30dp"
                             android:background="@drawable/contenedor"
                             android:text="RECORDATORIOS"
                             android:textSize="20sp"
