@@ -27,8 +27,8 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="301dp"
-        android:layout_height="372dp"
+        android:layout_width="307dp"
+        android:layout_height="426dp"
         android:background="@drawable/contenedor"
         android:elevation="30dp"
         android:orientation="vertical"
@@ -88,6 +88,15 @@
             android:elevation="30dp"
             android:onClick="irRegistro"
             android:text="Registrarme" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/logInGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:foregroundGravity="center"
+
+            android:layout_marginBottom="0dp" />
 
     </RelativeLayout>
 

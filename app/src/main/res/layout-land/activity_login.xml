@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:hint="Email" />
 
         <EditText
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtEmail"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="13dp"
             android:hint="Contraseña"
             android:inputType="textPassword" />
 
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtContraseña"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="9dp"
             android:gravity="right"
             android:text="¿Olvidaste la Contraseña?" />
 
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="206dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/btniniciar"
             android:elevation="30dp"
             android:text="Iniciar" />
@@ -89,6 +89,17 @@
 
             android:onClick="irRegistro"
             android:text="Registrarme" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/logInGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnRegistrar"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="2dp"
+            android:foregroundGravity="center" />
 
     </RelativeLayout>
 

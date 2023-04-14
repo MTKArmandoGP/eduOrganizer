@@ -41,7 +41,7 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_principal);
 
         auth=FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
+        user=FirebaseAuth.getInstance().getCurrentUser();
         tvUser=findViewById(R.id.usuarioNav);
         mFirestore= FirebaseFirestore.getInstance();
         drawerLayout=findViewById(R.id.drawerLayout);
@@ -52,6 +52,7 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
         agenda=findViewById(R.id.Agenda);
         logout=findViewById(R.id.CerrarSesión);
         saludoUser=findViewById(R.id.tvSaludo_PantallaPrincipal);
+
 
         //Se verifica si se ha iniciado sesión
         if(user==null){
@@ -74,6 +75,12 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
                         //Lo mandamos al textview con el mensaje de Bievenida
                         tvUser.setText("Usuario: "+usuario);
                         saludoUser.setText("Hola "+usuario);
+                    }else if(user!=null){
+
+                        String userGoogle=user.getDisplayName();
+                        tvUser.setText("Usuario: "+userGoogle);
+                        saludoUser.setText("Hola "+userGoogle);
+
                     }else{
                         //Si no existe, mandamos el mensaje de que no se encontró
                         Toast.makeText(PantallaPrincipalActivity.this, "No se Encontro Coincidencia", Toast.LENGTH_SHORT).show();
